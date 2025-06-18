@@ -42,10 +42,6 @@
   transition: box-shadow 0.18s;
 }
 
-.cards.cards2 > ul > li:hover {
-  box-shadow: 0 16px 56px 0 rgb(44 68 140 / 16%);
-}
-
 .cards.cards3 > ul > li {
   background: #fff;
   border: 1px solid #e6e6e6;
@@ -59,6 +55,10 @@
   overflow: hidden;
   position: relative;
   transition: box-shadow 0.18s;
+}
+
+.cards.cards2 > ul > li:hover {
+  box-shadow: 0 16px 56px 0 rgb(44 68 140 / 16%);
 }
 
 .cards.cards3 > ul > li:hover {
@@ -124,22 +124,6 @@
   font-weight: 400;
 }
 
-.cards.cards2 .cards-card-body > p > picture,
-.cards.cards2 .cards-card-body > p > img:not(.icon) {
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 2px;
-  vertical-align: middle;
-}
-
-.cards.cards2 .button-container,
-.cards.cards2 .cards-card-body .button {
-  display: none;
-}
-
 .cards.cards2 .cards-card-image {
   background: #191919;
   border-radius: 0;
@@ -160,6 +144,31 @@
   border-top-right-radius: 12px;
   background: #1a1a1a;
   margin: 0;
+}
+
+.cards.cards3 .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.cards.cards2 .cards-card-body > p > picture,
+.cards.cards2 .cards-card-body > p > img:not(.icon) {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+
+.cards.cards2 .button-container,
+.cards.cards2 .cards-card-body .button {
+  display: none;
 }
 
 .cards.cards2 .cards-card-body {
@@ -212,15 +221,6 @@
   border-top-right-radius: 8px;
   background: #f9f9f9;
   flex-shrink: 0;
-}
-
-.cards.cards3 .cards-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
 }
 
 .cards.cards3 .cards-card-body {
@@ -360,6 +360,7 @@
     flex: 0 0 92vw;
     max-width: 99vw;
   }
+
   .cards.cards2 > ul {
     gap: 2.5px;
     padding: 0;
@@ -371,15 +372,18 @@
     flex: 0 0 98vw;
     max-width: 99vw;
   }
+
   .cards.cards2 > ul {
     gap: 1px;
     padding: 0;
   }
+
   .cards.cards3 > ul > li {
     min-width: 99vw;
     max-width: 99vw;
     flex: 0 0 99vw;
   }
+
   .cards.cards3 > ul {
     gap: 4px;
   }
@@ -391,6 +395,7 @@
     max-width: 98vw;
     flex: 0 0 98vw;
   }
+
   .cards.cards3 > ul {
     gap: 12px;
   }
