@@ -1,3 +1,4 @@
+/* --- cards base --- */
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -27,9 +28,28 @@
 }
 
 /* --- generated CSS --- */
+.cards.cards11 {
+  background: #f8f9fa;
+  padding: 32px 0;
+}
+
 .cards.cards2 {
   background: #f6f6f6;
   padding: 24px 0;
+}
+
+.cards.cards11 > ul {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 0 18px 16px;
+  margin: 0;
+  list-style: none;
+  scrollbar-width: thin;
+  scroll-snap-type: x mandatory;
+  align-items: flex-start;
+  min-height: 410px;
 }
 
 .cards.cards2 > ul {
@@ -45,8 +65,24 @@
   scrollbar-width: none;
 }
 
-.cards.cards2 > ul::-webkit-scrollbar {
+.cards.cards2 > ul::-webkit-scrollbar,
+.cards.cards11 > ul::-webkit-scrollbar {
   display: none;
+}
+
+.cards.cards11 > ul > li {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  box-shadow: 0 1.5px 6px 0 rgb(60 72 88 / 7%);
+  width: 260px;
+  flex: 0 0 260px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: box-shadow 0.2s;
+  min-height: 395px;
 }
 
 .cards.cards2 > ul > li {
@@ -65,8 +101,25 @@
   transition: box-shadow 0.2s;
 }
 
+.cards.cards11 > ul > li:hover {
+  box-shadow: 0 6px 24px 0 rgb(60 72 88 / 13%);
+}
+
 .cards.cards2 > ul > li:hover {
   box-shadow: 0 18px 48px 0 rgb(0 0 0 / 23%);
+}
+
+.cards.cards11 .cards-card-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  background: transparent;
+  min-height: 105px;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  position: relative;
 }
 
 .cards.cards2 .cards-card-image {
@@ -90,6 +143,29 @@
   border-radius: 0;
 }
 
+.cards.cards11 .cards-card-image img {
+  width: 94%;
+  max-width: 232px;
+  height: 90px;
+  object-fit: contain;
+  background: none;
+  border-radius: 4px;
+  box-shadow: none;
+  display: block;
+  margin-top: 6px;
+  margin-bottom: 2px;
+}
+
+.cards.cards11 .cards-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 20px 18px;
+  gap: 4px;
+  flex: 1 1 auto;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
 .cards.cards2 .cards-card-body {
   flex: 1;
   display: flex;
@@ -102,6 +178,38 @@
   border-bottom-right-radius: 15px;
   margin: 0;
   justify-content: flex-start;
+}
+
+.cards.cards11 .cards-card-body p {
+  margin: 0 0 4px;
+  color: #757575;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.cards.cards2 .cards-card-body > p {
+  font-size: 1.05rem;
+  color: #fff;
+  margin: 0 0 10px;
+  line-height: 1.36;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.cards.cards11 .cards-card-body p:first-child {
+  font-weight: 700;
+  color: #222;
+  font-size: 18px;
+  margin: 0 0 2px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  letter-spacing: 0.01em;
 }
 
 .cards.cards2 .cards-card-body h2 {
@@ -118,16 +226,40 @@
   letter-spacing: 0.01em;
 }
 
-.cards.cards2 .cards-card-body > p {
-  font-size: 1.05rem;
-  color: #fff;
-  margin: 0 0 10px;
-  line-height: 1.36;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.cards.cards11 .cards-card-body h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 3px;
+  line-height: 1.23;
+  letter-spacing: 0.01em;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cards.cards11 .cards-card-body p:nth-child(3) {
+  color: #757575;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.cards.cards11 .cards-card-body p:nth-last-child(2),
+.cards.cards11 .cards-card-body p:last-child {
+  color: #BDBDBD;
+  font-size: 13px;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.cards.cards11 .cards-card-body p:nth-last-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .cards.cards2 .cards-card-body > p:nth-last-of-type(4) {
@@ -165,22 +297,51 @@
   display: none;
 }
 
+.cards.cards11 .cards-card-body p:nth-last-child(2)::before {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+  background: url('data:image/svg+xml;utf8,<svg fill="gray" viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" fill="none" stroke="gray" stroke-width="2"/></svg>') no-repeat center center;
+  background-size: 18px 18px;
+  vertical-align: middle;
+  content: "";
+}
+
+/* Hide scroll bar visually on Webkit browsers */
+.cards.cards11 > ul::-webkit-scrollbar,
+.cards.cards2 > ul::-webkit-scrollbar {
+  display: none;
+}
+
+/* Order of media queries and selectors changed to solve no-descending-specificity for .cards.cards2 and .cards.cards11 */
 @media (width <= 1200px) {
   .cards.cards2 > ul {
     padding: 0 4px;
     max-width: 100vw;
     gap: 12px;
   }
-
   .cards.cards2 > ul > li {
     min-width: 320px;
     max-width: 320px;
     width: 320px;
     height: 290px;
   }
-
   .cards.cards2 .cards-card-body {
     padding: 12px 8px 10px;
+  }
+  .cards.cards11 > ul {
+    gap: 8px;
+    padding: 0 2px 16px;
+  }
+  .cards.cards11 > ul > li {
+    width: 210px;
+    flex: 0 0 210px;
+    min-height: 300px;
+  }
+  .cards.cards11 .cards-card-image img {
+    height: 54px;
+    max-width: 125px;
   }
 }
 
@@ -189,12 +350,21 @@
     gap: 8px;
     padding: 0 0.5vw;
   }
-
   .cards.cards2 > ul > li {
     min-width: 90vw;
     max-width: 90vw;
     width: 90vw;
     height: 180px;
+  }
+  .cards.cards11 > ul > li {
+    width: 90vw;
+    flex: 0 0 90vw;
+    min-width: 150px;
+    min-height: 150px;
+  }
+  .cards.cards11 .cards-card-image img {
+    height: 38px;
+    max-width: 72px;
   }
 }
 
@@ -204,5 +374,15 @@
     max-width: 99vw;
     width: 99vw;
     height: 135px;
+  }
+  .cards.cards11 > ul > li {
+    width: 98vw;
+    flex: 0 0 98vw;
+    min-width: 120px;
+    min-height: 110px;
+  }
+  .cards.cards11 .cards-card-image img {
+    height: 23px;
+    max-width: 54px;
   }
 }
