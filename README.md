@@ -2,8 +2,8 @@
 Your project's description...
 
 ## Environments
-- Preview: https://main--{repo}--{owner}.aem.page/
-- Live: https://main--{repo}--{owner}.aem.live/
+- Preview: https://main--carsales-au--aemdemos.aem.page/editorial
+- Live: https://main--carsales-au--aemdemos.aem.live/editorial
 
 ## Documentation
 
