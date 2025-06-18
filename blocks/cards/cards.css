@@ -1,3 +1,5 @@
+/* General card styles */
+
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -27,10 +29,6 @@
 }
 
 /* --- generated CSS --- */
-.cards.cards2 {
-  background: #f6f6f6;
-  padding: 24px 0;
-}
 
 .cards.cards2 > ul {
   display: flex;
@@ -47,6 +45,34 @@
 
 .cards.cards2 > ul::-webkit-scrollbar {
   display: none;
+}
+
+.cards.cards8 > ul {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  overflow: auto visible;
+  list-style: none;
+  margin: 0;
+  padding: 0 2px;
+  scroll-snap-type: x mandatory;
+}
+
+.cards.cards8 > ul > li {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 14px rgb(32 40 50 / 13%);
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  min-width: 350px;
+  max-width: 350px;
+  height: 445px;
+  overflow: hidden;
+  padding: 0;
+  scroll-snap-align: start;
+  transition: box-shadow 0.14s;
 }
 
 .cards.cards2 > ul > li {
@@ -69,6 +95,27 @@
   box-shadow: 0 18px 48px 0 rgb(0 0 0 / 23%);
 }
 
+.cards.cards8 > ul > li:hover {
+  box-shadow: 0 10px 32px rgb(32 40 50 / 15%);
+}
+
+/* Card image: slightly taller for better balance */
+.cards.cards8 .cards-card-image {
+  width: 100%;
+  height: 193px;
+  min-height: 193px;
+  max-height: 193px;
+  overflow: hidden;
+  position: relative;
+  background: #e8eaed;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .cards.cards2 .cards-card-image {
   width: 100%;
   height: 45%;
@@ -81,6 +128,15 @@
   border-top-right-radius: 15px;
 }
 
+.cards.cards8 .cards-card-image picture,
+.cards.cards8 .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
 .cards.cards2 .cards-card-image picture,
 .cards.cards2 .cards-card-image img {
   width: 100%;
@@ -88,6 +144,48 @@
   object-fit: cover;
   display: block;
   border-radius: 0;
+}
+
+/* Play button overlay, visible and centered */
+.cards.cards8 .cards-card-image::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 63%);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  content: "";
+}
+
+.cards.cards8 .cards-card-image::after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0; height: 0;
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+  border-left: 22px solid #fff;
+  transform: translate(-38%,-50%);
+  z-index: 3;
+  content: "";
+}
+
+.cards.cards8 .cards-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 17px 12px 26px;
+  gap: 12px;
+  flex: 1 1 auto;
+  background: transparent;
+  color: #191919;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  margin: 0;
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .cards.cards2 .cards-card-body {
@@ -104,6 +202,19 @@
   justify-content: flex-start;
 }
 
+.cards.cards8 .cards-card-body h2 {
+  font-size: 1.23rem;
+  font-weight: 700;
+  color: #181818;
+  margin: 0 0 8px;
+  line-height: 1.22;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .cards.cards2 .cards-card-body h2 {
   font-size: 1.23rem;
   font-weight: 700;
@@ -118,6 +229,18 @@
   letter-spacing: 0.01em;
 }
 
+.cards.cards8 .cards-card-body > p {
+  font-size: 1.04rem;
+  color: #757575;
+  margin: 0 0 10px;
+  line-height: 1.39;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .cards.cards2 .cards-card-body > p {
   font-size: 1.05rem;
   color: #fff;
@@ -128,6 +251,20 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.cards.cards8 .cards-card-body > p:nth-last-of-type(3) {
+  display: flex;
+  align-items: center;
+  font-size: 1.05em;
+  color: #232323;
+  margin: 0;
+  font-weight: 600;
+  gap: 5px;
+  line-height: 1.18;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+  letter-spacing: 0.01em;
 }
 
 .cards.cards2 .cards-card-body > p:nth-last-of-type(4) {
@@ -141,6 +278,20 @@
   line-height: 1.22;
   font-weight: 500;
   letter-spacing: 0;
+}
+
+.cards.cards8 .cards-card-body > p:nth-last-of-type(3) picture,
+.cards.cards8 .cards-card-body > p:nth-last-of-type(3) img {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid #e0e0e0;
 }
 
 .cards.cards2 .cards-card-body > p:nth-last-of-type(4) img {
@@ -165,7 +316,49 @@
   display: none;
 }
 
+.cards.cards8 .cards-card-body > p:nth-last-of-type(2) {
+  color: #cacaca;
+  font-size: 0.89em;
+  margin: 0 0 9px;
+  font-weight: 400;
+  line-height: 1.13;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+}
+
+.cards.cards8 .cards-card-body > *:last-child {
+  margin-bottom: 0;
+}
+
+.cards.cards8 .cards-card-body > p:not(:nth-last-of-type(3)) img,
+.cards.cards8 .cards-card-body > p:not(:nth-last-of-type(3)) picture {
+  display: none;
+}
+
+/* Responsive tuning */
 @media (width <= 1200px) {
+  .cards.cards8 > ul {
+    gap: 9px;
+    padding: 0 1px;
+  }
+
+  .cards.cards8 > ul > li {
+    width: 282px;
+    min-width: 282px;
+    max-width: 282px;
+    height: 315px;
+  }
+
+  .cards.cards8 .cards-card-image {
+    height: 97px;
+    min-height: 97px;
+    max-height: 97px;
+  }
+
+  .cards.cards8 .cards-card-body {
+    padding: 10px 5px 17px;
+  }
+
   .cards.cards2 > ul {
     padding: 0 4px;
     max-width: 100vw;
@@ -185,6 +378,28 @@
 }
 
 @media (width <= 900px) {
+  .cards.cards8 > ul {
+    gap: 5px;
+    padding: 0 0.5vw;
+  }
+
+  .cards.cards8 > ul > li {
+    width: 95vw;
+    min-width: 95vw;
+    max-width: 95vw;
+    height: 150px;
+  }
+
+  .cards.cards8 .cards-card-image {
+    height: 38px;
+    min-height: 38px;
+    max-height: 38px;
+  }
+
+  .cards.cards8 .cards-card-body {
+    padding: 6px 2px 8px;
+  }
+
   .cards.cards2 > ul {
     gap: 8px;
     padding: 0 0.5vw;
@@ -199,10 +414,28 @@
 }
 
 @media (width <= 600px) {
+  .cards.cards8 > ul > li {
+    width: 99vw;
+    min-width: 99vw;
+    max-width: 99vw;
+    height: 130px;
+  }
+
+  .cards.cards8 .cards-card-image {
+    height: 32px;
+    min-height: 32px;
+    max-height: 32px;
+  }
+
   .cards.cards2 > ul > li {
     min-width: 99vw;
     max-width: 99vw;
     width: 99vw;
     height: 135px;
   }
+}
+
+.cards.cards8 {
+  background: #f6f9fa;
+  padding: 28px 0;
 }
