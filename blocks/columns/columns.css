@@ -1,3 +1,4 @@
+
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -29,5 +30,110 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+}
+
+.columns.columns13 {
+  background: #fff;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 14px;
+  color: #222;
+}
+
+.columns.columns13 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 48px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.columns.columns13 > div > div {
+  flex: 0 1 auto;
+  min-width: 150px;
+  max-width: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 10px;
+}
+
+.columns.columns13 > div > div:last-child {
+  max-width: 240px;
+  min-width: 170px;
+}
+
+.columns.columns13 > div > div > p {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 5px;
+  line-height: 1.25;
+}
+
+.columns.columns13 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.columns.columns13 ul li {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #222;
+  margin-bottom: 9px;
+  line-height: 1.6;
+}
+
+.columns.columns13 a {
+  color: #222;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.columns.columns13 a:hover {
+  color: #08c;
+  text-decoration: underline;
+}
+
+.columns.columns13 > div > div:last-child ul li:first-child a {
+  color: #08c;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.columns.columns13 > div > div:last-child ul li:last-child {
+  color: #888;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-bottom: 0;
+  line-height: 1.7;
+}
+
+.columns.columns13 > div > div:nth-child(3) ul li:nth-child(8) {
+  font-weight: 700;
+  color: #111;
+  margin-top: 14px;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+@media (width <= 900px) {
+  .columns.columns13 > div {
+    flex-direction: column;
+    gap: 32px;
+    padding: 0 8px;
+  }
+
+  .columns.columns13 > div > div {
+    max-width: 100%;
+    min-width: 0;
+    padding-bottom: 0;
   }
 }
